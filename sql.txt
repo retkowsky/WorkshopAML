@@ -1,0 +1,21 @@
+SELECT *
+FROM t1
+LEFT JOIN t2 ON T1.CodeProduit = t2.CodeProduit
+
+
+SELECT Count(*) AS EFFECTIF from t1
+
+
+SELECT t1."CodeClient" AS "CodeClient",t1."NumeroCommande" AS "NumeroCommande" 
+FROM t1 
+GROUP BY t1."CodeClient",t1."NumeroCommande"
+
+
+SELECT CodeClient, Prenom, Nom, Montant from t1
+WHERE Montant > 150
+ORDER BY Montant DESC
+
+
+SELECT CodeClient, SUM(Montant), AVG(Montant) FROM t1
+GROUP BY CodeClient
+ORDER BY CodeClient ASC
